@@ -4,10 +4,25 @@
 __author__= 'jiangyixin'
 __time__ = 2019/2/22 21:11
 """
+from flask import Flask
+from application.extensions import (
+    db,
+    alembic
+)
 
 
 def create_app(config):
-    pass
+    """
+    创建flask app实例
+    :param config:
+    :return:
+    """
+
+    app = Flask(__name__)
+    configure_app(app, config)
+    configure_extensions(app)
+
+    return app
 
 
 def configure_app(app, config):
@@ -17,6 +32,7 @@ def configure_app(app, config):
     :param config:
     :return:
     """
+    app.config.from_object(config)
 
 
 def configure_extensions(app):
@@ -25,3 +41,5 @@ def configure_extensions(app):
     :param app:
     :return:
     """
+    db.init_app(app)
+    alembic.init_app(app)

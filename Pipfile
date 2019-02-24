@@ -7,6 +7,8 @@ name = "pypi"
 flask = "==1.0.2"
 flask-alembic = "==2.0.1"
 flask-sqlalchemy = "==2.3.2"
+flask-script = "==2.0.6"
+python-dotenv = "*"
 
 [dev-packages]
 
