@@ -19,6 +19,8 @@ class Config:
 class DevelopmentConfig(Config):
     """开发环境配置"""
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@192.168.32.200:3306/tickpic'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class TestConfig(Config):
@@ -37,7 +39,3 @@ config = {
     'test': TestConfig,
     'production': ProductionConfig
 }
-
-
-if __name__ == '__main__':
-    print(base_path)

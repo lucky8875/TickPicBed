@@ -8,7 +8,7 @@ from application.extensions import db
 import datetime
 
 
-class BaseModel(object):
+class BaseModel(db.Model):
     """基类"""
     __abstract__ = True
 
