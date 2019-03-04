@@ -23,7 +23,7 @@ def create_app(env):
     app = Flask(__name__)
     configure_app(app, cfg)
     configure_extensions(app)
-
+    register_api_resource()
     return app
 
 
@@ -44,3 +44,11 @@ def configure_extensions(app):
     :return:
     """
     db.init_app(app)
+
+
+def register_api_resource():
+    """
+    注册api资源
+    :return:
+    """
+    pass

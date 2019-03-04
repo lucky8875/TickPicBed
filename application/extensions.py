@@ -7,4 +7,5 @@ __time__ = 2019/2/22 21:30
 """
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()

@@ -4,7 +4,7 @@
 __author__= 'jiangyixin'
 __time__ = 2019/2/25 22:30
 """
-from application.utils.core.plugin import BasePlugin
+from application.libs.plugin.plugin import BasePlugin
 
 
 class SmPlugin(BasePlugin):

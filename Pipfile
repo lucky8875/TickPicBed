@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 flask = "==1.0.2"
 flask-sqlalchemy = "==2.3.2"
-flask-script = "==2.0.6"
 python-dotenv = "*"
 pymysql = "*"
 flask-migrate = "*"

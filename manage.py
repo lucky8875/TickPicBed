@@ -7,7 +7,7 @@ __time__ = 2019/2/22 21:19
 import os
 
 from application.app import create_app, db
-from application.models.user import User
+from application.apps.account.models import User
 from application.models.image import Image
 from flask_migrate import Migrate
 
