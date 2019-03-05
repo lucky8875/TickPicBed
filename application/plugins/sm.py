@@ -11,6 +11,8 @@ from application.libs.response import success_response, fail_response
 
 class SmPlugin(BasePlugin):
 
+    __pluginname__ = 'SM图床'
+
     def load_config(self) -> dict:
         return {
             'url': '',
