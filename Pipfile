@@ -9,6 +9,7 @@ flask-sqlalchemy = "==2.3.2"
 python-dotenv = "*"
 pymysql = "*"
 flask-migrate = "*"
+requests = "*"
 
 [dev-packages]
 

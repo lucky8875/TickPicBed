@@ -5,6 +5,7 @@ __author__= 'jiangyixin'
 __time__ = 2019/2/22 21:11
 """
 from flask import Flask
+from application.libs.plugin.plugin import manager
 from application.config import config
 from application.extensions import (
     db,
@@ -23,7 +24,8 @@ def create_app(env):
     app = Flask(__name__)
     configure_app(app, cfg)
     configure_extensions(app)
-    register_api_resource()
+    register_blueprint(app)
+    register_plugins(manager)
     return app
 
 
@@ -46,9 +48,18 @@ def configure_extensions(app):
     db.init_app(app)
 
 
-def register_api_resource():
+def register_blueprint(app: Flask):
     """
     注册api资源
+    :param app:
     :return:
     """
-    pass
+    from application.apis import account
+    from application.apis import image
+    app.register_blueprint(account, url_prefix='/v1/account')
+    app.register_blueprint(image, url_prefix='/v1/image')
+
+
+def register_plugins(manager):
+    from application.plugins.sm import SmPlugin
+    manager.register_plugin('sm', SmPlugin)
