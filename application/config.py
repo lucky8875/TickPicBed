@@ -13,7 +13,9 @@ base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Config:
-    pass
+    GITHUB_TOKEN_ACCESS_URL = 'https://github.com/login/oauth/access_token'
+    GITHUB_CLIENT_ID = os.getenv('GITHUB_CLIENT_ID')
+    GITHUB_CLIENT_SECRET = os.getenv('GITHUB_CLIENT_SECRET')
 
 
 class DevelopmentConfig(Config):

@@ -31,7 +31,7 @@ class User(BaseModel, ModelMixin):
     __tablename__ = 'user'
 
     nickname = db.Column(db.String(32), unique=True, comment='用户名')
-    email = db.Column(db.String(50), unique=True, nullable=False, comment='邮箱')
-    password = db.Column(db.String(32), nullable=False, comment='密码')
-    secret_token = db.Column(db.String(32), nullable=False, comment='访问密匙')
-    salt = db.Column(db.String(32), nullable=False, comment='密码盐')
+    email = db.Column(db.String(50), unique=True, comment='邮箱')
+    password = db.Column(db.String(32), nullable=True, comment='密码')
+    secret_token = db.Column(db.String(32), nullable=True, comment='访问密匙')
+    salt = db.Column(db.String(32), nullable=True, comment='密码盐')
