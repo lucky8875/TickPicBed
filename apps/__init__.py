@@ -5,7 +5,7 @@ __author__= 'jiangyixin'
 __time__ = 2019/2/22 21:28
 """
 from flask import Flask
-from apps.libs.plugin.plugin import manager
+from apps.libs.plugin.plugin_manage import manager
 from apps.config import config
 from apps.extensions import (
     db,
@@ -48,7 +48,6 @@ def configure_extensions(app):
     """
     db.init_app(app)
     migrate.init_app(app, db)
-    dyconf.init_app(app)
 
 
 def register_blueprint(app: Flask):

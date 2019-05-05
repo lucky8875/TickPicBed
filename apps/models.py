@@ -22,7 +22,7 @@ class BaseModel(db.Model):
 class Image(BaseModel, ModelMixin):
     """用户上传图片"""
     __tablename__ = 'image'
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), comment='上传的用户')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), comment='上传的用户', default=None)
     default_show = db.Column(db.String(200), comment='默认上传显示的地址')
     raw = db.Column(db.Text)
 

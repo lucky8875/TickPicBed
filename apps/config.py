@@ -6,7 +6,8 @@ __author__= 'jiangyixin'
 __time__ = 2019/2/22 21:20
 """
 import os
-import dynaconf
+
+from dynaconf import settings
 
 
 # 项目根目录
@@ -22,7 +23,8 @@ class Config:
 class DevelopmentConfig(Config):
     """开发环境配置"""
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{dynaconf.settings}:root@192.168.32.200:3306/tickpic'
+    SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{settings.get("DB_USER")}:{settings.get("DB_PASSWORD")}' \
+                              f'@{settings.get("DB_HOST")}:{settings.get("DB_PORT")}/{settings.get("DB_NAME")}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 

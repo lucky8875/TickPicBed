@@ -5,7 +5,7 @@ __author__= 'jiangyixin'
 __time__ = 2019/3/4 22:10
 """
 from flask import Blueprint, request, jsonify
-from apps.libs.plugin.plugin import manager
+from apps.libs.plugin.plugin_manage import manager
 
 
 image = Blueprint(__name__, 'image')

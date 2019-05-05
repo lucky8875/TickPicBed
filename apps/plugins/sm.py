@@ -5,7 +5,8 @@ __author__= 'jiangyixin'
 __time__ = 2019/2/25 22:30
 """
 import requests
-from apps.libs.plugin.plugin import BasePlugin
+
+from apps.libs.plugin.base_plugin import BasePlugin
 from apps.libs.response import success_response, fail_response
 
 
@@ -13,12 +14,8 @@ class SmPlugin(BasePlugin):
 
     __pluginname__ = 'SM图床'
 
-    def load_config(self) -> dict:
-        return {
-            'url': '',
-        }
-
-    def upload(self, file) -> str:
+    @staticmethod
+    def upload(file) -> str:
         data = {
             'ssl': True,
             'format': 'json'
@@ -35,3 +32,7 @@ class SmPlugin(BasePlugin):
                 return fail_response('文件上传失败')
             return success_response(url)
         return fail_response(data.get('msg', ''))
+
+    class Meta:
+        plugin_plural_name = 'SM图床'
+        plugin_name = 'sm'
