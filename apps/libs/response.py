@@ -4,7 +4,6 @@
 __author__= 'jiangyixin'
 __time__ = 2019/3/5 21:47
 """
-import json
 
 
 def response(status, message, data):

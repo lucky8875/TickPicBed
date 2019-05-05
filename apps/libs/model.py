@@ -4,7 +4,7 @@
 __author__= 'jiangyixin'
 __time__ = 2019/3/4 21:33
 """
-from application.app import db
+from apps import db
 
 
 def db_session_commit():

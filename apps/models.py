@@ -4,10 +4,10 @@
 __author__= 'jiangyixin'
 __time__ = 2019/3/4 22:07
 """
-from application.extensions import db
+from apps.extensions import db
 import datetime
 
-from application.libs.model import ModelMixin
+from apps.libs.model import ModelMixin
 
 
 class BaseModel(db.Model):

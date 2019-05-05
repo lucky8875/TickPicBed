@@ -5,8 +5,8 @@ __author__= 'jiangyixin'
 __time__ = 2019/2/25 22:30
 """
 import requests
-from application.libs.plugin.plugin import BasePlugin
-from application.libs.response import success_response, fail_response
+from apps.libs.plugin.plugin import BasePlugin
+from apps.libs.response import success_response, fail_response
 
 
 class SmPlugin(BasePlugin):

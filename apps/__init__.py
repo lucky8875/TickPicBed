@@ -2,20 +2,21 @@
 # -*- coding: utf-8 -*-
 """
 __author__= 'jiangyixin'
-__time__ = 2019/2/22 21:11
+__time__ = 2019/2/22 21:28
 """
 from flask import Flask
-from application.libs.plugin.plugin import manager
-from application.config import config
-from application.extensions import (
+from apps.libs.plugin.plugin import manager
+from apps.config import config
+from apps.extensions import (
     db,
+    migrate,
 )
 
 
 def create_app(env):
     """
     创建flask app实例
-    :param config:
+    :param env:
     :return:
     """
     if not env:
@@ -46,6 +47,8 @@ def configure_extensions(app):
     :return:
     """
     db.init_app(app)
+    migrate.init_app(app, db)
+    dyconf.init_app(app)
 
 
 def register_blueprint(app: Flask):
@@ -54,12 +57,12 @@ def register_blueprint(app: Flask):
     :param app:
     :return:
     """
-    from application.apis import account
-    from application.apis import image
+    from apps.apis import account
+    from apps.apis import image
     app.register_blueprint(account, url_prefix='/v1/account')
     app.register_blueprint(image, url_prefix='/v1/image')
 
 
 def register_plugins(manager):
-    from application.plugins.sm import SmPlugin
+    from apps.plugins.sm import SmPlugin
     manager.register_plugin('sm', SmPlugin)

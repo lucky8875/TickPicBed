@@ -10,8 +10,9 @@ python-dotenv = "*"
 pymysql = "*"
 flask-migrate = "*"
 requests = "*"
+dynaconf = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

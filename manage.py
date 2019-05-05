@@ -6,12 +6,10 @@ __time__ = 2019/2/22 21:19
 """
 import os
 
-from application.app import create_app, db
-from application.models import User, Image
-from flask_migrate import Migrate
+from apps import create_app, db
+from apps.models import User, Image
 
 app = create_app(os.getenv('DEVELOPMENT', 'default'))
-migrate = Migrate(app, db)
 
 
 @app.shell_context_processor

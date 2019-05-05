@@ -7,7 +7,7 @@ __time__ = 2019/3/4 22:09
 import requests
 from flask import Blueprint, request, abort, current_app, url_for
 
-from application.utils.github import get_access_token
+from apps.utils.github import get_access_token
 
 account = Blueprint(__name__, 'account')
 
