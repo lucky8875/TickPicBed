@@ -26,7 +26,6 @@ def create_app(env):
     configure_app(app, cfg)
     configure_extensions(app)
     register_blueprint(app)
-    register_plugins(manager)
     return app
 
 
@@ -61,7 +60,3 @@ def register_blueprint(app: Flask):
     app.register_blueprint(account, url_prefix='/v1/account')
     app.register_blueprint(image, url_prefix='/v1/image')
 
-
-def register_plugins(manager):
-    from apps.plugins.sm import SmPlugin
-    manager.register_plugin('sm', SmPlugin)

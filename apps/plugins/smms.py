@@ -12,8 +12,6 @@ from apps.libs.response import success_response, fail_response
 
 class SmPlugin(BasePlugin):
 
-    __pluginname__ = 'SM图床'
-
     @staticmethod
     def upload(file) -> str:
         data = {
@@ -34,5 +32,5 @@ class SmPlugin(BasePlugin):
         return fail_response(data.get('msg', ''))
 
     class Meta:
-        plugin_plural_name = 'SM图床'
-        plugin_name = 'sm'
+        plugin_plural_name = 'SMMS图床'
+        plugin_name = 'smms'
